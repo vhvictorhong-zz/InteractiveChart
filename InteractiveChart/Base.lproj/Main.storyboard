@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InteractiveChart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="InteractiveChart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -68,19 +68,35 @@
             </objects>
             <point key="canvasLocation" x="1822" y="538"/>
         </scene>
-        <!--View Controller-->
+        <!--Bar Chart View Controller-->
         <scene sceneID="wfg-cK-SJT">
             <objects>
-                <viewController id="txY-Wd-x7o" sceneMemberID="viewController">
+                <viewController id="txY-Wd-x7o" customClass="BarChartViewController" customModule="InteractiveChart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dXe-ss-VF0"/>
                         <viewControllerLayoutGuide type="bottom" id="pgd-fk-N4F"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NqW-Fc-8fw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmN-re-uUo" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pgd-fk-N4F" firstAttribute="top" secondItem="cmN-re-uUo" secondAttribute="bottom" id="1gs-Ab-t9Q"/>
+                            <constraint firstItem="cmN-re-uUo" firstAttribute="leading" secondItem="NqW-Fc-8fw" secondAttribute="leading" id="X4l-HA-vK6"/>
+                            <constraint firstAttribute="trailing" secondItem="cmN-re-uUo" secondAttribute="trailing" id="ydp-Uq-t8X"/>
+                            <constraint firstItem="cmN-re-uUo" firstAttribute="top" secondItem="dXe-ss-VF0" secondAttribute="bottom" id="z3K-It-ubY"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="barChartView" destination="cmN-re-uUo" id="PJp-gH-qgf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paU-7E-BMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
